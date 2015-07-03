@@ -4,10 +4,16 @@ from django.http import HttpResponse
 
 # Create your views here.
 def inicio(request):
-	#return render_to_response('iniciod.html', context_instance=RequestContext(request))
-	return render_to_response('inicio.html',
-                          {"foo": "bar"},
-                          context_instance=RequestContext(request))
+	return render_to_response('inicio.html', context_instance=RequestContext(request))
 
+def productos(request):
+	return render_to_response('productos.html', context_instance=RequestContext(request))
 
-	#return HttpResponse('Esta es mi primera vista!')
+def clientes(request):
+	return render_to_response('clientes.html', context_instance=RequestContext(request))	
+
+def servicios(request):
+	return render_to_response('servicios.html', context_instance=RequestContext(request))	
+
+def contactos(request):
+	return render_to_response('contactos.html', context_instance=RequestContext(request))		
