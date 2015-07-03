@@ -1,27 +1,8 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Portal para la App de la GP 32</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'template/css/estilos.css' %}/">
-</head>
-<body>
-	<header id="header">
-		<h1>Portal para la App de la GP 32</h1>
-	</header><!-- /header -->
-	<nav>
-		<a href="#">Inicio</a>
-		<a href="#">Productos</a>
-		<a href="#">Clientes</a>
-		<a href="#">Servicios</a>
-		<a href="#">Contactos</a>
-	</nav>
-	<section id="contenedor">
-		<h2>Informaion del portal</h2>
-	</section>
-	<footer>
-		Derechos Reservados UTPL 2015	
-	</footer>
-</body>
-</html>
+{% extends "master.html" %}
+{% block content %}
+<p>Esta es la indormacion del bloque de contenidos del archivo de inicio</p>
+{% endblock %}
+
+{% block footer %}
+<h6>by @rlramirez </h6>
+{% endblock %}
