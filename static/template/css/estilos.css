@@ -51,3 +51,9 @@ footer{
 	margin: 0.3em 1em;
 	width: 15%;
 }
+#map-canvas{
+		height: 500px;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}

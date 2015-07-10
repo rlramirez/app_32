@@ -59,10 +59,14 @@ WSGI_APPLICATION = 'app_32.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'app_32db',
+        'USER':'root',
+        'PASSWORD':'r142891l',
+        'HOST':'127.0.0.1',
+        'PORT':'',
     }
-}
+}   
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

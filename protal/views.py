@@ -1,6 +1,7 @@
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext, loader
 from django.http import HttpResponse
+from .models import lugares
 
 # Create your views here.
 def inicio(request):
@@ -19,4 +20,5 @@ def contactos(request):
 	return render_to_response('contactos.html', context_instance=RequestContext(request))		
 
 def mapa(request):
-	return render_to_response('mapa.html', context_instance=RequestContext(request))		
+	lugar = lugares.objects.all()
+	return render(request, 'mapa.html', {'lugar':lugar})		
