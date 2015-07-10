@@ -17,3 +17,6 @@ def servicios(request):
 
 def contactos(request):
 	return render_to_response('contactos.html', context_instance=RequestContext(request))		
+
+def mapa(request):
+	return render_to_response('mapa.html', context_instance=RequestContext(request))		
