@@ -1,0 +1,49 @@
+{% extends "master.html" %}
+
+{% block header %}
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script >
+		function initialize() {
+	  var myLatlng = new google.maps.LatLng(-2.524406, -78.929772);
+	  var mapOptions = {
+	    zoom: 7,
+	    center: myLatlng
+	  }
+	  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	  
+	  {% for lugares in lugar %}
+	  	var marcador = new google.maps.LatLng({{lugares.latitud}}, {{lugares.longitud}});
+	  	var marker = new google.maps.Marker({
+		      position: marcador,
+		      map: map,
+		      title: '{{lugares.nombre}}'
+		  });
+	      google.maps.event.addListener(marker, 'click', function(){
+	            var popup = new google.maps.InfoWindow();
+	            var note = '{{lugares.descripcion}}';
+	            popup.setContent(note);
+	            popup.open(map, this);
+	      })
+	  {% endfor %}
+
+
+
+	  
+ 
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+{% endblock %}
+
+{% block content %}
+<h2>Mapa de Geolocalizacion</h2>
+<section id="map-canvas">ddd</section>
+{% for lugares in lugar %}
+{{lugares.nombre}}
+{% endfor%}
+{% endblock %}
+
+{% block footer %}
+<h6>by @rlramirez </h6>
+{% endblock %}
