@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^clientes/', 'protal.views.clientes', name='clientes'),
     url(r'^contactos/', 'protal.views.contactos', name='contactos'),
     url(r'^mapa/', 'protal.views.mapa', name='mapa'),
+    url(r'^chart/', 'protal.views.chart', name='chart'),
     url(r'^admin/', include(admin.site.urls)),
 )

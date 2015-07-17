@@ -22,3 +22,7 @@ def contactos(request):
 def mapa(request):
 	lugar = lugares.objects.all()
 	return render(request, 'mapa.html', {'lugar':lugar})		
+
+def chart(request):
+	datos = ""
+	return render(request, 'chart.html', {'datos':datos})
